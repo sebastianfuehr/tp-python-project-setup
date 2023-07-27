@@ -25,7 +25,7 @@ lint-flake8: ## run flake8 (code linter)
 	flake8 .
 
 lint-mypy: ## run mypy (static type checker)
-	mypy ./src
+	mypy .
 
 lint-mypy-report: ## run mypy & create a report
 	mypy ./src --html-report ./mypy_html

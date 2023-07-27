@@ -25,6 +25,7 @@ mypy = "^1.4.1"
 respx = "^0.20.2"
 pytest-asyncio = "^0.21.1"
 trio = "^0.22.2"
+pytest-sugar = "^0.9.7"
 
 [build-system]
 requires = ["poetry-core"]
