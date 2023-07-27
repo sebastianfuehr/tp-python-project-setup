@@ -20,6 +20,12 @@ black = "^23.7.0"
 flake8 = "^6.0.0"
 mypy = "^1.4.1"
 
+
+[tool.poetry.group.test.dependencies]
+respx = "^0.20.2"
+pytest-asyncio = "^0.21.1"
+trio = "^0.22.2"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
@@ -51,3 +57,7 @@ warn_return_any = false
 warn_unreachable = true
 # Misc
 pretty = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+adopts = "-p no:cacheprovider" # deactivates pytest caching
