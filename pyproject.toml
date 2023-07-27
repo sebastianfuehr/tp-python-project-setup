@@ -26,6 +26,7 @@ respx = "^0.20.2"
 pytest-asyncio = "^0.21.1"
 trio = "^0.22.2"
 pytest-sugar = "^0.9.7"
+pytest-cov = "^4.1.0"
 
 [build-system]
 requires = ["poetry-core"]
@@ -62,3 +63,10 @@ pretty = true
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 adopts = "-p no:cacheprovider" # deactivates pytest caching
+
+[tool.coverage.report]
+exclude_lines = [
+    'if __name__ == "__main__":',
+    "def __repr__",
+    "def __str__"
+]

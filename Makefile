@@ -31,3 +31,20 @@ lint-mypy-report: ## run mypy & create a report
 	mypy ./src --html-report ./mypy_html
 
 lint: lint-black lint-isort lint-flake8 lint-mypy ## run all linters
+
+##@ Tests
+
+unit-tests: ## run pytest
+	@pytest
+
+unit-tests-cov: ## run pytest and create a terminal and html report
+	@pytest --cov=src --cov-report term-missing --cov-report=html
+
+unit-tests-cov-fail: ## run pytest and create reports, but fail only if coverage is under 80%
+	@pytest --cov=src --cov-report term-missing --cov-report=html --cov-fail-under=80 --junitxml=pytest.xml | tee pytest-coverage.txt
+
+clean-cov: ## remove generated coverage files
+	@rm -rf .coverage
+	@rm -rf htmlcov
+	@rm -rf pytest.xml
+	@rm -rf pytest-coverage.txt
