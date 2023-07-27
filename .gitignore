@@ -1,3 +1,7 @@
+# Coverage reports
+pytest-coverage.txt
+pytest.xml
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
